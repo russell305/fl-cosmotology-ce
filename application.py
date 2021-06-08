@@ -74,6 +74,27 @@ db = scoped_session(sessionmaker(bind=engine)) # for individual sessions
 
 @app.route("/", methods = ["GET", "POST"])
 def index():
-    return "FLASK MINIMUM TEMPLATE"
-	# session['admin'] = False #causing errors timing out
+	session['admin'] = False #causing errors timing out
+	return "hihihihi"
 	# return render_template("main_page.html")
+
+@app.route('/faq/', methods = ["GET", "POST"])
+def faq():
+    # return "hihihihi"
+	return render_template("faq.html")
+
+@app.route('/contact/', methods = ["GET"])
+def contact():
+    # return "hihihihi"
+	return render_template("contact.html")
+
+@app.route('/sign_up_field/', methods = ["GET"])
+def sign_up_field():
+    return "hihihihi"
+	# return render_template("sign_up_field.html")
+
+@app.route('/testimonials/', methods = ["GET"])
+def testimonials():
+    return "hihihihi"
+	# chapter = ia_courses.testimonials
+	# return render_template("testimonials.html", chapter=chapter)
