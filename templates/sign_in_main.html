@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Florida Continuing Education: User Info </title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111789653-4');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<style>
+  body {
+    height: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 100px;
+    padding: 0;
+    font-family: verdana;
+    background-color: white;
+  }
+
+  .input-fields {
+    margin: 15px;
+  }
+
+  nav ul {
+    margin-right: 3%;
+  }
+
+  nav ul li {
+    /* margin-left: 7%; */
+    font-size: 24px;
+  }
+
+  .fp {
+    margin-top: 20px;
+    /* font-size: 20px; */
+  }
+
+  h4 {
+    color: red;
+    margin-top: 20px;
+    /* margin-bottom: 30px; */
+  }
+  @media (min-width: 500px) {
+  	h1{
+      margin-top: -45px;
+      margin-bottom: 10px;
+  					  }
+  				}
+  @media (max-width: 500px) {
+  	h1{
+      margin-top: -15px;
+      margin-bottom: 10px;
+  					  }
+  				}
+</style>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
+    <div class="container">
+      <a class="navbar-brand" href="{{ url_for('index') }}">
+        <img id="logo" src="{{ url_for("static", filename="logo2.png") }}" alt="adjuster" class="nav-link" href="{{ url_for('index') }}">
+      </a>
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item ">
+          <a class="nav-link" href="{{ url_for('index') }}">Home </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ url_for('sign_in_main') }}">Sign-In</a>
+
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="{{ url_for('sign_up_field') }}">Sign-Up</a>
+
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="{{ url_for('faq') }}">FAQ</a>
+        </li>
+
+        <li class="nav-item ">
+          <a class="nav-link" href="{{ url_for('testimonials') }}">Testimonials</a>
+        </li>
+
+        <li class="nav-item ">
+          <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+  <div class="jumbotron container-fluid text-center">
+    <form action="{{ url_for('sign_in_main_result') }}" method="post" enctype="multipart/form-data">
+      <h1>Sign-In</h1>
+      <h4>{{paid_message}}</h4>
+
+      {% if name %}
+          <h3>username: {{name}}</h3>
+      {% endif %}
+      {% if password %}
+          <h3>password: {{password}}</h3>
+      {% endif %}
+
+
+      <div class="input-fields">
+        <label for="name_label">Username</label>
+        <input id="name_label" type="text" name="name" placeholder="Name" maxlength="40" required>
+      </div>
+
+      <div class="input-fields">
+        <label for="password_label">Password</label>
+        <input id="password_label" type="text" name="password" placeholder="Password" maxlength="20" size="20" required>
+      </div>
+      <div class="text-center">
+        <button id="su" class="btn-primary btn-lg">Sign-In</button>
+
+      </div>
+    </form>
+    <div class="fp">
+      <!-- <a  href="{{ url_for('forgot_password') }}">Forgot Username or Password</a> -->
+    </div>
+    <div class="button2">
+      <form action="{{ url_for('forgot_password') }}" method="post">
+        <button class=" btn-primary btn-lg" aria-pressed="true">Forgot Username or Password</button><BR>
+      </form>
+    </div>
+
+
+
+  </div>
+
+</body>
+
+</html>

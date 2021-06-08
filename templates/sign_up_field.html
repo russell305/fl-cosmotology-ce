@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Sign-Up </title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111789653-4');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+</head>
+
+<style>
+
+body {
+height: 100%;
+margin-left: 10%;
+margin-right: 10%;
+margin-bottom: 100px;
+padding: 0;
+font-family: verdana;
+background-color: 	white ;
+}
+
+nav ul {
+  	margin-right:3%;
+}
+nav ul li {
+	/* margin-left:7%; */
+	font-size: 24px;
+}
+
+
+
+@media (min-width: 500px) {
+  h1{
+    margin-top: -45px;
+    margin-bottom: 10px;
+            }
+        }
+@media (max-width: 500px) {
+  h1{
+    margin-top: -15px;
+    margin-bottom: 10px;
+            }
+        }
+#tag{
+  margin-top: -10px;
+}
+
+
+#toplist{
+  margin-bottom: 20px;
+}
+#left{
+  margin-left: 40px;
+}
+
+#adj{
+		width:200px;
+		height:120px;
+		margin-bottom: 20px;
+		}
+@media (min-width: 500px) {
+	#adj {
+		width:750px;
+		height:300px;
+		margin-bottom: 20px;
+					  }
+				}
+h4{
+  margin-bottom: 10px;
+}
+
+
+</style>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top"> -->
+    <div class="container">
+      <a class="navbar-brand" href="{{ url_for('index') }}">
+            <img  id="logo" src="{{ url_for("static", filename="logo2.png") }}" alt="adjuster" class="nav-link" href="{{ url_for('index') }}">
+      </a>
+
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item ">
+          <a class="nav-link" href="{{ url_for('index') }}">Home </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="{{ url_for('sign_in_main') }}">Sign-In</a>
+
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ url_for('sign_up_field') }}">Sign-Up</a>
+
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="{{ url_for('faq') }}">FAQ</a>
+        </li>
+
+        <li class="nav-item ">
+          <a class="nav-link" href="{{ url_for('testimonials') }}">Testimonials</a>
+        </li>
+
+        <li class="nav-item ">
+          <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+        </li>
+    </ul>
+
+    </div>
+  </nav>
+
+
+  <div class="container-fluid  jumbotron">
+
+    <div class="text-center">
+
+        <h1>Sign-Up:</h1>
+<h4>Click on your field:</h4>
+    </div>
+
+    <div class="block">
+      <div class="row">
+        <div class="col-md-6">
+          <ul id="">
+            <h4>
+                <li id="list"><a href="{{ url_for('index') }}">Florida Cosmetologist</a></li>
+            </h4>
+            <h4>
+              <li id="list"><a href="{{ url_for('index') }}">Florida Barber</a></li>
+            </h4>
+
+            <h4>
+                <li id="list"><a href="{{ url_for('index') }}">Facial Specialist</a></li>
+            </h4>
+            <h4>
+              <li id="list"><a href="{{ url_for('index') }}">Full Specialist</a></li>
+            </h4>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <ul id="">
+            <h4>
+              <li id="list"><a href="{{ url_for('index') }}">Life, Health, & Annuity Agent (2-15/2-18)</a></li>
+            </h4>
+            <h4>
+                <li id="list"><a href="{{ url_for('index') }}">Life & Annuity Agent (2-14/2-16)</a></li>
+              </h4>
+            <h4>
+              <li id="list"><a href="{{ url_for('index') }}">Health Agent (2-40)</a></li>
+            </h4>
+            <h4>
+              <li id="list"><a href="{{ url_for('index') }}">Real Estate Agent (coming soon)</a></li>
+            </h4>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>

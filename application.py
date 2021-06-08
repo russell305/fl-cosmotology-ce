@@ -52,19 +52,14 @@ engine = create_engine("postgres://bvyvdgxwtoixjr:fe8261a052ad6ba5997e288ef6d4a4
 #Sending data to and from database.
 db = scoped_session(sessionmaker(bind=engine)) # for individual sessions
 
-#0275d8   primary  blue color
+
 
 # utils.recent_certificates()
 # utils.recent_certificates_csv()
 
 # db.execute("CREATE TABLE fl_life_health_agent_1(id SERIAL PRIMARY KEY, name VARCHAR NOT NULL UNIQUE,email VARCHAR NOT NULL, password VARCHAR NOT NULL, address VARCHAR NOT NULL,first VARCHAR NOT NULL,last VARCHAR NOT NULL,license_no VARCHAR NOT NULL,license_state VARCHAR NOT NULL, maiden VARCHAR NOT NULL, color VARCHAR NOT NULL, ethics_paid Boolean, ethics_course  Boolean, ethics_score_date VARCHAR, course_2_paid Boolean, course_2_complete Boolean, course_2_score_date VARCHAR,  course_3_paid Boolean, course_3_complete Boolean, course_3_score_date VARCHAR, course_4_paid Boolean, course_4_complete Boolean, course_4_score_date VARCHAR)")
 # db.commit()
-#relational database
-# db.execute("CREATE TABLE ia_results_1(id SERIAL PRIMARY KEY, name VARCHAR NOT NULL UNIQUE,name_id INTEGER REFERENCES fl_public_adjuster_1)")
-# db.commit()
-# user = db.execute("SELECT fl_public_adjuster_1.name FROM fl_public_adjuster_1 JOIN ia_results_1 ON fl_public_adjuster_1.id = ia_results_1.name_id WHERE ia_results_1.name = 'frank'  ").fetchall()
-# now = datetime.datetime.now()
-# print("today-date", now)
+
 
 
 #adds comma
@@ -75,8 +70,8 @@ db = scoped_session(sessionmaker(bind=engine)) # for individual sessions
 @app.route("/", methods = ["GET", "POST"])
 def index():
 	session['admin'] = False #causing errors timing out
-	return "hihihihibnbn"
-	# return render_template("main_page.html")
+	# return "hihihihibnbnxxxxxx"
+	return render_template("main_page.html")
 
 @app.route('/faq/', methods = ["GET", "POST"])
 def faq():
@@ -90,11 +85,31 @@ def contact():
 
 @app.route('/sign_up_field/', methods = ["GET"])
 def sign_up_field():
-    return "hihihihi"
-	# return render_template("sign_up_field.html")
+    # return "sign_up_field"
+	return render_template("sign_up_field.html")
+
+@app.route('/sign_in_main/', methods = ["GET","POST"])
+def sign_in_main():
+	return "sign_in"
+	# return render_template("sign_in_main.html")
 
 @app.route('/testimonials/', methods = ["GET"])
 def testimonials():
-    return "hihihihi"
+    return "testimonials"
 	# chapter = ia_courses.testimonials
 	# return render_template("testimonials.html", chapter=chapter)
+
+@app.route('/wrong_password/', methods = ["GET"])
+def wrong_password():
+	return "wrong_password"
+	# return render_template("wrong_password.html")
+
+@app.route('/forgot_password/', methods = ["GET","POST"])
+def forgot_password():
+	return "forgot_password"
+	# return render_template("forgot_password.html")
+
+@app.route('/unsubscribe/', methods = ["GET","POST"])
+def unsubscribe():
+	return "unsubscribe"
+	# return render_template("unsubscribe.html")
