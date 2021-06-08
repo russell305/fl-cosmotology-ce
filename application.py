@@ -75,7 +75,7 @@ db = scoped_session(sessionmaker(bind=engine)) # for individual sessions
 @app.route("/", methods = ["GET", "POST"])
 def index():
 	session['admin'] = False #causing errors timing out
-	return "hihihihi"
+	return "hihihihibnbn"
 	# return render_template("main_page.html")
 
 @app.route('/faq/', methods = ["GET", "POST"])
