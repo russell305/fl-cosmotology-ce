@@ -50,17 +50,13 @@ Session (app)
 engine = create_engine("postgres://bvyvdgxwtoixjr:fe8261a052ad6ba5997e288ef6d4a435b9f5d10be0e1dd8a7a452069f578dd97@ec2-52-204-20-42.compute-1.amazonaws.com:5432/ddju8atj54t423")
 #talk to datbase wiTh SQL. Object used to manage connections to database.
 #Sending data to and from database.
-db = scoped_session(sessionmaker(bind=engine)) # for individual sessions
-
-
+db = scoped_session(sessionmaker(bind=engine)) # for individual sessionss
 
 # utils.recent_certificates()
 # utils.recent_certificates_csv()
 
 # db.execute("CREATE TABLE fl_life_health_agent_1(id SERIAL PRIMARY KEY, name VARCHAR NOT NULL UNIQUE,email VARCHAR NOT NULL, password VARCHAR NOT NULL, address VARCHAR NOT NULL,first VARCHAR NOT NULL,last VARCHAR NOT NULL,license_no VARCHAR NOT NULL,license_state VARCHAR NOT NULL, maiden VARCHAR NOT NULL, color VARCHAR NOT NULL, ethics_paid Boolean, ethics_course  Boolean, ethics_score_date VARCHAR, course_2_paid Boolean, course_2_complete Boolean, course_2_score_date VARCHAR,  course_3_paid Boolean, course_3_complete Boolean, course_3_score_date VARCHAR, course_4_paid Boolean, course_4_complete Boolean, course_4_score_date VARCHAR)")
 # db.commit()
-
-
 
 #adds comma
 # df3.to_csv('lh-group-1.csv', index=False, header=False, line_terminator=',\n')
@@ -113,3 +109,18 @@ def forgot_password():
 def unsubscribe():
 	return "unsubscribe"
 	# return render_template("unsubscribe.html")
+
+@app.route('/intro_cosmetologist/', methods = ["GET"])
+def intro_cosmetologist():
+	session['course'] = "cosmetologist"
+	return render_template("intro_cosmetologist.html")
+
+@app.route('/intro_cosmetologist_pdf/', methods = ["GET"])
+def intro_cosmetologist_pdf():
+	session['course'] = "cosmetologist"
+	return render_template("intro_cosmetologist.html")
+
+@app.route('/cosmo_course/', methods = ["GET","POST"])
+def cosmo_course():
+
+	return render_template("cosmo_course.html")
