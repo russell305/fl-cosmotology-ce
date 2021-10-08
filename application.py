@@ -69,6 +69,142 @@ def index():
 	# return "hihihihibnbnxxxxxx"
 	return render_template("main_page.html")
 
+@app.route("/results", methods = ["GET", "POST"])
+def results():
+	answers_correct = 0
+	result_1 = request.form.get("1", "")
+	result_2 = request.form.get("2", "")
+	result_3 = request.form.get("3", "")
+	result_4 = request.form.get("4", "")
+	result_5 = request.form.get("5", "")
+	result_6 = request.form.get("6", "")
+	result_7 = request.form.get("7", "")
+	result_8 = request.form.get("8", "")
+	result_9 = request.form.get("9", "")
+	result_10 = request.form.get("10", "")
+	result_11 = request.form.get("11", "")
+	result_12 = request.form.get("12", "")
+	result_13 = request.form.get("13", "")
+	result_14 = request.form.get("14", "")
+	result_15 = request.form.get("15", "")
+	result_16 = request.form.get("16", "")
+	result_17 = request.form.get("17", "")
+	result_18 = request.form.get("18", "")
+	result_19 = request.form.get("19", "")
+	result_20 = request.form.get("20", "")
+	result_21 = request.form.get("21", "")
+	result_22 = request.form.get("22", "")
+	result_23 = request.form.get("23", "")
+	result_24 = request.form.get("24", "")
+	result_25 = request.form.get("25", "")
+	result_26 = request.form.get("26", "")
+	result_27 = request.form.get("27", "")
+	result_28 = request.form.get("28", "")
+	result_29 = request.form.get("29", "")
+	result_30 = request.form.get("30", "")
+
+	if result_1 == "c":
+		answers_correct +=1
+	if result_2 == "c":
+		answers_correct +=1
+	if result_3 == "c":
+		answers_correct +=1
+	if result_4 == "c":
+		answers_correct +=1
+	if result_5 == "c":
+		answers_correct +=1
+	if result_6 == "c":
+		answers_correct +=1
+	if result_7 == "c":
+		answers_correct +=1
+	if result_8 == "c":
+		answers_correct +=1
+	if result_9 == "c":
+		answers_correct +=1
+	if result_10 == "c":
+		answers_correct +=1
+	if result_11 == "c":
+		answers_correct +=1
+	if result_12 == "c":
+		answers_correct +=1
+	if result_13 == "c":
+		answers_correct +=1
+	if result_14 == "c":
+		answers_correct +=1
+	if result_15 == "c":
+		answers_correct +=1
+	if result_16 == "c":
+		answers_correct +=1
+	if result_17 == "c":
+		answers_correct +=1
+	if result_18 == "c":
+		answers_correct +=1
+	if result_19 == "c":
+		answers_correct +=1
+	if result_20 == "c":
+		answers_correct +=1
+	if result_21 == "c":
+		answers_correct +=1
+	if result_22 == "c":
+		answers_correct +=1
+	if result_23 == "c":
+		answers_correct +=1
+	if result_24 == "c":
+		answers_correct +=1
+	if result_25 == "c":
+		answers_correct +=1
+	if result_26 == "c":
+		answers_correct +=1
+	if result_27 == "c":
+		answers_correct +=1
+	if result_28 == "c":
+		answers_correct +=1
+	if result_29 == "c":
+		answers_correct +=1
+	if result_30 == "c":
+		answers_correct +=1
+	final_score = (answers_correct/30	) * 100
+	print ('answers correct', answers_correct)
+	print ('final score', final_score)
+
+	if final_score <= 80:
+		return render_template("final_pass.html", final_score = final_score)
+	else:
+		return render_template("final_fail.html", final_score = final_score)
+
+
+@app.route('/complete_pay1/', methods = ["GET","POST"])
+def complete_pay1():
+	print('first')
+	return "FUCK YOU"
+
+
+@app.route('/complete_pay/<string:first>/<string:last>', methods = ["GET","POST"])
+def complete_pay(first, last):
+	return 'hello'
+	first = first
+	last = last
+	return render_template("complete_pay.html", first=first, last=last)
+
+
+
+@app.route('/intro_cosmetologist/', methods = ["GET"])
+def intro_cosmetologist():
+	return render_template("intro_cosmetologist.html")
+
+
+
+@app.route('/course_completion/', methods = ["GET"])
+def course_completion():
+
+	return render_template("course_completion.html")
+
+@app.route('/cosmo_course/', methods = ["GET","POST"])
+def cosmo_course():
+
+	return render_template("cosmo_course.html")
+
+
 @app.route('/faq/', methods = ["GET", "POST"])
 def faq():
     # return "hihihihi"
@@ -109,18 +245,3 @@ def forgot_password():
 def unsubscribe():
 	return "unsubscribe"
 	# return render_template("unsubscribe.html")
-
-@app.route('/intro_cosmetologist/', methods = ["GET"])
-def intro_cosmetologist():
-	session['course'] = "cosmetologist"
-	return render_template("intro_cosmetologist.html")
-
-@app.route('/intro_cosmetologist_pdf/', methods = ["GET"])
-def intro_cosmetologist_pdf():
-	session['course'] = "cosmetologist"
-	return render_template("intro_cosmetologist.html")
-
-@app.route('/cosmo_course/', methods = ["GET","POST"])
-def cosmo_course():
-
-	return render_template("cosmo_course.html")

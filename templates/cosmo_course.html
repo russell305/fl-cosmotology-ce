@@ -99,6 +99,142 @@
       <li><a href="{{ url_for('contact') }}">Contact</a></li>
     </ul>
   </nav>
+  <h1>FINAL EXAM</h1>
+  <h5>Check the answer to each true/false question, you must get 80% or higher to pay</h5>
+  <form action="{{ url_for('results') }}" method="post"  enctype = "multipart/form-data">
+  <div class="text-left">
+
+    <P>1. HIV and AIDS are the same thing. <BR>
+      <input type="radio" name="1" value=""> True<BR>
+      <input type="radio" name="1" value="c"> False <BR>
+
+    </p>
+    <P>2. You can get HIV from blood.  <BR>
+      <input type="radio" name="2" value="c"> True<BR>
+      <input type="radio" name="2" value=""> False <BR>
+    </p>
+    <P>3. You can get HIV from animals.  <BR>
+      <input type="radio" name="3" value=""> True<BR>
+      <input type="radio" name="3" value="c"> False <BR>
+    </p>
+    <P>4. Using gloves, goggles, and other barriers when anticipating contact with blood
+      or body fluids prevents occupational HIV transmission.  <BR>
+      <input type="radio" name="4" value="c"> True<BR>
+      <input type="radio" name="4" value=""> False <BR>
+    </p>
+    <P>5. Sanitizers are used to reduce germs from surfaces but not totally get rid of them.   <BR>
+      <input type="radio" name="5" value="c"> True<BR>
+      <input type="radio" name="5" value=""> False <BR>
+    </p>
+    <P>6. Disinfectants are chemical products that destroy or inactivate germs and prevent them from growing.  <BR>
+      <input type="radio" name="6" value="c"> True<BR>
+      <input type="radio" name="6" value=""> False <BR>
+    </p>
+    <P>7. Ideal disinfectants are toxic. <BR>
+      <input type="radio" name="7" value=""> True<BR>
+      <input type="radio" name="7" value="c"> False <BR>
+    </p>
+    <P>8. Barbicide is a disinfectant solution used by barbers and cosmetologists for sterilizing grooming tools such as combs and hair-cutting shears.  <BR>
+      <input type="radio" name="8" value="c"> True<BR>
+      <input type="radio" name="8" value=""> False <BR>
+    </p>
+    <P> 9. Washing hands at key times with soap and water is not that important. <BR>
+      <input type="radio" name="9" value=""> True<BR>
+      <input type="radio" name="9" value="c"> False <BR>
+    </p>
+    <P> 10.Washing hands twice per day is recommended for Salon workers. <BR>
+      <input type="radio" name="10" value=""> True<BR>
+      <input type="radio" name="10" value="c"> False <BR>
+    </p>
+    <P> 11. Antiseptics are a diverse class of drugs that are applied to skin surfaces or mucous membranes for their anti-infective effects. <BR>
+      <input type="radio" name="11" value="c"> True<BR>
+      <input type="radio" name="11" value=""> False <BR>
+    </p>
+    <P> 12. A lice infestation, or pediculosis, is caused by parasites living on human skin.  <BR>
+      <input type="radio" name="12" value="c"> True<BR>
+      <input type="radio" name="12" value=""> False <BR>
+    </p>
+    <P>13.  Hairdressers need to disinfect tools and other implements to prevent the spread of bacteria  <BR>
+      <input type="radio" name="13" value="c"> True<BR>
+      <input type="radio" name="13" value=""> False <BR>
+    </p>
+    <P>14. OSHA has found that some hair smoothing products may contain formaldehyde, which can pose health risks to salon workers.   <BR>
+      <input type="radio" name="14" value="c"> True<BR>
+      <input type="radio" name="14" value=""> False <BR>
+    </p>
+    <P> 15. Formaldehyde is a known cancer-causing substance. <BR>
+      <input type="radio" name="15" value="c"> True<BR>
+      <input type="radio" name="15" value=""> False <BR>
+    </p>
+    <P>16. Workers' compensation or workers' comp is a form of insurance providing wage replacement and medical benefits to employees injured in the course of employment.  <BR>
+      <input type="radio" name="16" value="c"> True<BR>
+      <input type="radio" name="16" value=""> False <BR>
+    </p>
+    <P>17. Temporary total disability benefits will continue until the end of the month.  <BR>
+      <input type="radio" name="17" value=""> True<BR>
+      <input type="radio" name="17" value="c"> False <BR>
+    </p>
+    <P> 18. Persons whose occupation or practice is confined solely to hair braiding do not need to register with the department. <BR>
+      <input type="radio" name="18" value="c"> True<BR>
+      <input type="radio" name="18" value=""> False <BR>
+    </p>
+    <P> 19. To be licensed for cosmetology a person must be at least 16 years of age or has received a high school diploma. <BR>
+      <input type="radio" name="19" value="c"> True<BR>
+      <input type="radio" name="19" value=""> False <BR>
+    </p>
+    <P> 20. No private school of cosmetology shall be permitted to operate without a license issued by the Commission for Independent Education pursuant to chapter 1005. <BR>
+      <input type="radio" name="20" value="c"> True<BR>
+      <input type="radio" name="20" value=""> False <BR>
+    </p>
+
+    <P> 21. It is okay to engage in the practice of cosmetology or a specialty without an active license as a cosmetologist. <BR>
+      <input type="radio" name="21" value=""> True<BR>
+      <input type="radio" name="21" value="c"> False <BR>
+    </p>
+    <P>  22. By law, each salon must keep clean linens in a closed, dust-proof cabinet.<BR>
+       <input type="radio" name="22" value="c"> True<BR>
+      <input type="radio" name="22" value=""> False <BR>
+    </p>
+    <P>  23. Keratin in the skin's outer layer helps create a protective barrier.<BR>
+       <input type="radio" name="23" value="c"> True<BR>
+      <input type="radio" name="23" value=""> False <BR>
+    </p>
+    <P>  24. PH is the Unit of Measure used to express the degree of acidity of a substance.<BR>
+      <input type="radio" name="24" value="c"> True<BR>
+      <input type="radio" name="24" value=""> False <BR>
+    </p>
+    <P> 25. A healthy PH range to target is between 9.0 and 10.5. <BR>
+      <input type="radio" name="25" value=""> True<BR>
+      <input type="radio" name="25" value="c"> False <BR>
+    </p>
+    <P>  26. All products used in hair and nail salons are safe and pose no health risks to you and your clients.<BR>
+       <input type="radio" name="26" value=""> True<BR>
+      <input type="radio" name="26" value="c"> False <BR>
+    </p>
+    <P>  27. One study in the United States of America has shown that up to 20% of hairdressers leave the business because of allergies or dermatitis.<BR>
+       <input type="radio" name="27" value="c"> True<BR>
+      <input type="radio" name="27" value=""> False <BR>
+    </p>
+    <P>  28. Cosmetic packaging is bio-degradable.<BR>
+      <input type="radio" name="28" value=""> True<BR>
+      <input type="radio" name="28" value="c"> False <BR>
+    </p>
+    <P> 29. Covid-19 is spread through respiratory droplets produced when a person who has COVID-19 coughs, sneezes, or talks. <BR>
+      <input type="radio" name="29" value="c"> True<BR>
+      <input type="radio" name="29" value=""> False <BR>
+    </p>
+    <P> 30. As a hair stylist, barber, massage therapist, hair braider, cosmetologist, or esthetician,
+      you might be exposed to the virus at your job when you are
+      in close contact with clients, coworkers, vendors, service-providers, or delivery people. <BR>
+      <input type="radio" name="30" value="c"> True<BR>
+      <input type="radio" name="30" value=""> False <BR>
+    </p>
+
+  </div>
+
+  <button id ="su" class="btn btn-primary btn-lg ">Submit</button>
+
+  </form>
   <div class="container-fluid  jumbotron">
     <div class="text-center">
       <h1>Table of Contents</h1>
@@ -2447,12 +2583,7 @@
 <p>  Talk to your employer or supervisor, or whoever is responsible for responding to COVID-19 concerns
 </p>
 
-    <form action="{{ url_for('index') }}" method="post" enctype="multipart/form-data">
 
-
-      <button id="su" class="btn btn-primary btn-md ">Next</button>
-
-    </form>
   </div>
 </body>
 

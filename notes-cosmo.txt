@@ -5,10 +5,40 @@ On October 15, 2019, the Florida Board of Cosmetology voted on and approved the 
 continuing education hours for cosmetologists, facial specialists, nail specialists and full
 specialists license to, at a minimum, 10 hours of board-approved continuing education.
 
+
+
+
+ provider’s name,
+ the provider’s approval number,
+ the licensee’s name,
+the licensee’s license number,
+the approved course title,
+the course approval number,
+the course completion date,
+
+approved continuing education credit hours awarded in each subject
+area covered by the course.
+
+
+1.Course Outline: Attach a course outline specifying subjects, major topics, and subtopics to be covered in the course.
+Each subject mustalso include a narrative summary.
+2. Reference and Source Materials: Include a list of all reference and source materials, along with their publication date(s), for the course.
+3. Course Evaluation: Attach a copy of the evaluation forms used to assess the learning experience, instructional methods,
+and course materials.
+4. Instructors: List the instructors for each course, and attach a resume for each instructor even if previously approved for another course.
+Instructors must possess sufficient skills and knowledge in the subject areas being taught.
+.
+5. At least one complete copy of the course in its final form, as it will be presented to the
+5. Record Keeping: Attendance records must be maintained for a minimum of four years.
+Attendance records and course completion information for all course participants must be provided to the Department in a specified format acceptable to
+the Department and within an agreed upon timeframe. These records must be made available to the Department upon request.
+d. Fee: No fees
+
+
 The ten (10) hours of continuing education shall include, at a minimum, all of the following '
 subjects as they relate to the practice of cosmetology:
 
-10 hours of CE 
+10 hours of CE
 25-30 true false final
 -1 hour HIV/AIDS,
 -3 hours of sanitation and sterilization,
@@ -22,6 +52,59 @@ subjects as they relate to the practice of cosmetology:
 Continuing Education (Chemical Makeup, Environmental Issues,
 Elective, HIV/AIDS, State/Federal Laws & Rules, Occupational Safety Health Administration [OSHA],
 Sanitation/Sterilization, Workers’ Compensation)
+pvd469
+Modes of Transmission
+● Infection Control Procedures
+● Clinical Management
+● Prevention
+● Behavioral Attitudes
+--
+HIV/Aids Definition
+Transmission
+Protection
+HIV/Aids Myths
+Stages of HIV
+Diagnosis
+Treatment
+Most at risk
+HIV and Salons
+--
+
+
+--
+I have taken an HIV/AIDS course approved by the Florida Barbers’ Board. Can I get credit toward my cosmetology license?
+ Cosmetologists,
+ Nail Technicians,
+ Facial Specialists,
+ Full Specialists,
+ Esthetician
+ *Hair Braiders,
+ *Hair Wrappers
+ *Body Wrappers
+ Removes registration requirements and licensure requirements for hair braiding, hair wrapping, and body wrapping by the Department.
+
+ can only receive credit for Board of Cosmetology approved courses.
+
+ Barber
+ Florida Barbers
+ Modes of transmission for HIV/AIDS and other communicable diseases
+Infection control procedures, clinical management and prevention of HIV/AIDS and other communicable diseases
+Next steps to take for an HIV-positive individual
+Anti-HIV medications
+Additional resources and materials available for the HIV-positive or AIDS patient
+Appropriate attitudes when dealing with persons who may have HIV/AIDS or other communicable diseases
+
+Submit a copy of the evaluation forms to assess the learning experience, instructional methods, and course materials.
+
+List the instructors for each course and attach a resume for each instructor even if previously approved for another course.
+ Submit at least one complete copy of the course in its final form, as it will be presented to the licensee, if approved.
+
+Governing Agency
+Name: Florida Division of Professions Barber Board
+Phone: 8504871395
+Fax: 8509210038
+Website: http://www.myfloridalicense.com/DBPR/barbers/
+Address: 2601 Blair Stone Rd. Tallahassee, 32301
 
 Florida Department of Business and Professional Regulation
 Board of Cosmetology
@@ -29,26 +112,3 @@ Board of Cosmetology
 Tallahassee, FL 32399
 Phone: 850-487-1395 | Fax: 850-488-8040
 www.myfloridalicense.com/DBPR/cosmetology
-
-1 - HIV
-elite 6000
-beuty bliss 5000
-fl-ceo-19000
-
-3 - Sanitation
-paragon-6375
-elite-8443
-continuing-16- 7160
-
-.5 - OSHA
-done
-
-1 - kChemical
-paragon-3400
-staycurrent 3183
-elite- 4949
-flceo-1554
-done 3700
-
-.5 workers comp
-elite 3800
