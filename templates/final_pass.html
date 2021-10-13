@@ -100,37 +100,21 @@ p{
 <h3>Final Score:{{final_score}}</h3>
 
 
-<h4>Fill Out Course Completion Certificate</h4>
-
-<form action="{{ url_for('complete_pay1') }}" method="post" enctype="multipart/form-data">
-  <div class="input-fields">
-    <label for="first">First Name</label>
-    <input id="first" type="text" name="name" placeholder="First Name" maxlength="40" required>
-  </div>
-      <button id="su" class="btn-primary btn-lg">Enter</button>
 
 
+
+    <h5>Provider Name: USA Discount Continuing Education</h5>
+<h5>Provider Approval Number: 0008833</h5>
+<h5>Course Title: Florida 10-Hour Continuing Education for Cosmetology</h5>
+<h5>Course Approval Number: *****</h5>
+<h5>Approved Continuing Education Credit Hours: 10</h5>
+<h5>Instructor’s Signature: <i>Russell Mckee<i/></h5>
+  <form action="{{ url_for('complete_pay') }}" method="post"  >
+    <h5>Please pay $7 for Certificate of Completion</h5>
+    <button id="su" class="btn-primary btn-lg">Submit</button>
   </form>
 
 
-<form action="{{ url_for('complete_pay',first=first, last=last) }}" method="post" enctype="multipart/form-data">
-
-  <div class="input-fields">
-    <label for="first">First Name</label>
-    <input id="first" type="text" name="name" placeholder="First Name" maxlength="40" required>
-  </div>
-
-  <div class="input-fields">
-    <label for="last">Last Name</label>
-    <input id="last" type="text" name="name" placeholder="Last Name" maxlength="40" required>
-  </div>
-
-
-    <button id="su" class="btn-primary btn-lg">Enter</button>
-
-
-</form>
-<h4>Course Evaluation</h4>
 
  </div>
 </body>

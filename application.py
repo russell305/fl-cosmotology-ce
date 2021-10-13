@@ -172,26 +172,25 @@ def results():
 	else:
 		return render_template("final_fail.html", final_score = final_score)
 
+@app.route('/complete_pay/', methods = ["GET","POST"])
+def complete_pay():
+	return 'ok here'
+	first = request.form.get("first", "")
+	last = request.form.get("last", "")
+	license = request.form.get("license", "")
+	course = request.form.get("course", "")
+	rate = request.form.get("rate", "")
+	expectation = request.form.get("expectation", "")
+	objective = request.form.get("objective", "")
+	comment = request.form.get("comment", "")
 
-@app.route('/complete_pay1/', methods = ["GET","POST"])
-def complete_pay1():
-	print('first')
-	return "FUCK YOU"
+	print (first, last, license, course, rate, expectation, objective, comment)
 
-
-@app.route('/complete_pay/<string:first>/<string:last>', methods = ["GET","POST"])
-def complete_pay(first, last):
-	return 'hello'
-	first = first
-	last = last
-	return render_template("complete_pay.html", first=first, last=last)
-
-
+	return render_template("complete_pay.html", first=first, last=last, license=license, course=course, rate=rate, expectation=expectation, objective=objective, comment=comment)
 
 @app.route('/intro_cosmetologist/', methods = ["GET"])
 def intro_cosmetologist():
 	return render_template("intro_cosmetologist.html")
-
 
 
 @app.route('/course_completion/', methods = ["GET"])
