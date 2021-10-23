@@ -93,60 +93,61 @@ p{
     </div>
   </nav>
   <div class="container-fluid jumbotron">
-<div class="text-center ">
-  <h4>Fill Out Course Completion Certificate</h4>
+    <form action="{{ url_for('success_course_complete') }}" method="post"  >
+      <h5>Pay $9 for Certificate of Completion</h5>
+      <button id="su" class="btn-primary btn-lg">Submit</button>
+    </form>
+    <!-- Load Stripe.js on your website. -->
+<script src="https://js.stripe.com/v3"></script>
 
-  <h4>Course Evaluation</h4>
-  <form action="{{ url_for('complete_pay') }}" method="post" enctype="multipart/form-data">
+<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+<button
+  style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em;cursor:pointer"
+  id="checkout-button-price_1JmeZOHlovjCGU8RZyKD3Slq"
+  role="link"
+  type="button"
+>
+  Checkout
+</button>
 
-    <div class="input-fields">
-      <label for="first">First Name</label>
-      <input id="first" type="text" name="first" placeholder="First Name" maxlength="40" required>
-    </div>
+<div id="error-message"></div>
 
-    <div class="input-fields">
-      <label for="last">Last Name</label>
-      <input id="last" type="text" name="last" placeholder="Last Name" maxlength="40" required>
-    </div>
+<script>
+(function() {
+  var stripe = Stripe('pk_live_Kte8bWOl8ZorTayjf5ZVNpQa00wTNHHZVq');
 
-    <div class="input-fields">
-      <label for="license">License Number</label>
-      <input id="license" type="text" name="license" placeholder="License Number" maxlength="40" required>
-    </div>
-
-    <div class="input-fields">
-      <label for="course">Was the course material was presented in a clear, concise, well-organized
-      manner? 1-10</label>
-      <input id="course" type="text" name="course" size="2" maxlength="2" required>
-    </div>
-
-    <div class="input-fields">
-      <label for="rate">How would rate this course? 1-10</label>
-      <input id="rate" type="text" name="rate" size="2" maxlength="2" required>
-    </div>
-
-    <div class="input-fields">
-      <label for="expectation">Did the content of this course meet your expectations? 1-10</label>
-      <input id="expectation" type="text" name="expectation" size="2" maxlength="2" required>
-    </div>
-
-    <div class="input-fields">
-      <label for="objective">Did the material presented to you meet the course objectives? 1-10</label>
-      <input id="objective" type="text" name="objective" size="2" maxlength="2" required>
-    </div>
-
-  <h5>Comments/Recommendations:</h5>
-    <div class="input-fields">
-      <label id="comment" type="text" for="comment"></label>
-      <textarea name="comment" type="text" rows="8" cols="8" maxlength="2000">
-
-      </textarea>
-      <h5>Get Certificate of Completion</h5>
-          <button id="su" class="btn-primary btn-lg">Submit</button>
-    </div>
-  </form>
-</div>
-
+  var checkoutButton = document.getElementById('checkout-button-price_1JmeZOHlovjCGU8RZyKD3Slq');
+  checkoutButton.addEventListener('click', function () {
+    /*
+     * When the customer clicks on the button, redirect
+     * them to Checkout.
+     */
+    stripe.redirectToCheckout({
+      lineItems: [{price: 'price_1JmeZOHlovjCGU8RZyKD3Slq', quantity: 1}],
+      mode: 'payment',
+      /*
+       * Do not rely on the redirect to the successUrl for fulfilling
+       * purchases, customers may not always reach the success_url after
+       * a successful payment.
+       * Instead use one of the strategies described in
+       * https://stripe.com/docs/payments/checkout/fulfill-orders
+       */
+      successUrl: window.location.protocol + '//www.floridadiscountce.org/cosmo_success',
+      cancelUrl: window.location.protocol + '//www.floridadiscountce.org/canceled',
+    })
+    .then(function (result) {
+      if (result.error) {
+        /*
+         * If `redirectToCheckout` fails due to a browser or network
+         * error, display the localized error message to your customer.
+         */
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+      }
+    });
+  });
+})();
+</script>
 
 
 

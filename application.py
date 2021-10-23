@@ -55,8 +55,15 @@ db = scoped_session(sessionmaker(bind=engine)) # for individual sessionss
 # utils.recent_certificates()
 # utils.recent_certificates_csv()
 
-# db.execute("CREATE TABLE fl_life_health_agent_1(id SERIAL PRIMARY KEY, name VARCHAR NOT NULL UNIQUE,email VARCHAR NOT NULL, password VARCHAR NOT NULL, address VARCHAR NOT NULL,first VARCHAR NOT NULL,last VARCHAR NOT NULL,license_no VARCHAR NOT NULL,license_state VARCHAR NOT NULL, maiden VARCHAR NOT NULL, color VARCHAR NOT NULL, ethics_paid Boolean, ethics_course  Boolean, ethics_score_date VARCHAR, course_2_paid Boolean, course_2_complete Boolean, course_2_score_date VARCHAR,  course_3_paid Boolean, course_3_complete Boolean, course_3_score_date VARCHAR, course_4_paid Boolean, course_4_complete Boolean, course_4_score_date VARCHAR)")
-# db.commit()
+'''
+db.execute("CREATE TABLE fl_cosmetology(id SERIAL PRIMARY KEY, first VARCHAR NOT NULL,last VARCHAR NOT NULL,license_no VARCHAR NOT NULL, ratings VARCHAR NOT NULL)")
+db.commit()
+# '''
+
+user =  db.execute("SELECT *  FROM fl_cosmetology ").fetchall()
+print (user)
+print (engine.table_names())
+
 
 #adds comma
 # df3.to_csv('lh-group-1.csv', index=False, header=False, line_terminator=',\n')
@@ -68,6 +75,41 @@ def index():
 	session['admin'] = False #causing errors timing out
 	# return "hihihihibnbnxxxxxx"
 	return render_template("main_page.html")
+
+@app.route('/intro_cosmetologist/', methods = ["GET"])
+def intro_cosmetologist():
+	return render_template("intro_cosmetologist.html")
+
+@app.route('/course_completetion/', methods = ["GET","POST"])
+def course_completetion():
+
+	first = request.form.get("first", "")
+	last = request.form.get("last", "")
+	license_no = request.form.get("license", "")
+	course = request.form.get("course", "")
+	rate = request.form.get("rate", "")
+	expectation = request.form.get("expectation", "")
+	objective = request.form.get("objective", "")
+	comment = request.form.get("comment", "")
+
+	print (first, last, license_no, course, rate, expectation, objective, comment)
+	# lowercase n smush
+	ratings = [course,rate,expectation,objective]
+	print ("ratings", ratings)
+
+	db.execute("INSERT INTO fl_cosmetology (first,last,license_no,ratings) VALUES (:first, :last, :license_no, :ratings)", { "first":first, "last":last, "license_no":license_no, "ratings":ratings})
+	db.commit()
+
+	return render_template("complete_pay.html", first=first, last=last, license=license, ratings=ratings)
+
+
+@app.route('/success_course_complete/',methods = ["GET", "POST"])
+def success_course_complete():
+	first = 'joe'
+	last = 'mama'
+	license = ''
+	date_complete="10/31/2022"
+	return render_template("success_course_complete.html", first=first, last=last, license=license, date_complete=date_complete )
 
 @app.route("/results", methods = ["GET", "POST"])
 def results():
@@ -163,7 +205,7 @@ def results():
 		answers_correct +=1
 	if result_30 == "c":
 		answers_correct +=1
-	final_score = (answers_correct/30	) * 100
+	final_score = (answers_correct/30) * 100
 	print ('answers correct', answers_correct)
 	print ('final score', final_score)
 
@@ -171,26 +213,6 @@ def results():
 		return render_template("final_pass.html", final_score = final_score)
 	else:
 		return render_template("final_fail.html", final_score = final_score)
-
-@app.route('/complete_pay/', methods = ["GET","POST"])
-def complete_pay():
-	return 'ok here'
-	first = request.form.get("first", "")
-	last = request.form.get("last", "")
-	license = request.form.get("license", "")
-	course = request.form.get("course", "")
-	rate = request.form.get("rate", "")
-	expectation = request.form.get("expectation", "")
-	objective = request.form.get("objective", "")
-	comment = request.form.get("comment", "")
-
-	print (first, last, license, course, rate, expectation, objective, comment)
-
-	return render_template("complete_pay.html", first=first, last=last, license=license, course=course, rate=rate, expectation=expectation, objective=objective, comment=comment)
-
-@app.route('/intro_cosmetologist/', methods = ["GET"])
-def intro_cosmetologist():
-	return render_template("intro_cosmetologist.html")
 
 
 @app.route('/course_completion/', methods = ["GET"])
