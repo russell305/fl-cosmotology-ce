@@ -112,7 +112,7 @@ p{
 
     <h4>Fill Out Course Completion Certificate</h4>
 
-    <h4>Course Evaluation</h4>
+
     <form action="{{ url_for('course_completetion') }}" method="post" enctype="multipart/form-data">
 
       <div class="input-fields">
@@ -126,10 +126,16 @@ p{
       </div>
 
       <div class="input-fields">
+        <label for="email">Last Name</label>
+        <input id="email" type="text" name="email" placeholder="Email" maxlength="40" required>
+      </div>
+
+      <div class="input-fields">
         <label for="license">License Number</label>
         <input id="license" type="text" name="license" placeholder="License Number" maxlength="40" required>
       </div>
 
+<h4>Course Evaluation</h4>
       <div class="input-fields">
         <label for="course">Was the course material was presented in a clear, concise, well-organized
         manner? 1-10</label>
