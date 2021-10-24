@@ -34,6 +34,7 @@ import stripe
 import hashlib #password
 import re  #regex
 import datetime
+from datetime import timedelta
 import math
 import csv
 import utils
@@ -56,17 +57,16 @@ db = scoped_session(sessionmaker(bind=engine)) # for individual sessionss
 # utils.recent_certificates_csv()
 
 '''
-db.execute("CREATE TABLE fl_cosmetology(id SERIAL PRIMARY KEY, first VARCHAR NOT NULL,last VARCHAR NOT NULL,license_no VARCHAR NOT NULL, ratings VARCHAR NOT NULL)")
+db.execute("CREATE TABLE fl_cosmetology_2(id SERIAL PRIMARY KEY, first VARCHAR NOT NULL, last VARCHAR NOT NULL, email VARCHAR NOT NULL, license_no VARCHAR NOT NULL, ratings VARCHAR NOT NULL, comment VARCHAR NOT NULL, paid BOOLEAN)")
 db.commit()
-user =  db.execute("SELECT *  FROM fl_cosmetology ").fetchall()
-print (user)
-print (engine.table_names())
 '''
+user =  db.execute("SELECT *  FROM fl_cosmetology_2 ").fetchall()
+print ("users",user)
+# print (engine.table_names())
+
 
 @app.route("/", methods = ["GET", "POST"])
 def index():
-	session['admin'] = False #causing errors timing out
-	# return "hihihihibnbnxxxxxx"
 	return render_template("main_page.html")
 
 @app.route('/intro_cosmetologist/', methods = ["GET"])
@@ -91,20 +91,24 @@ def course_completetion():
 	# lowercase n smush
 	ratings = [course,rate,expectation,objective]
 	print ("ratings", ratings)
+	session['email'] = email
+	session.permanent = True
+	app.permanent_session_lifetime = timedelta(minutes=60)
+	db.execute("INSERT INTO fl_cosmetology_2 (first,last,email,license_no,ratings,comment) VALUES (:first, :last, :email, :license_no, :ratings, :comment)", { "first":first, "last":last, "email":email, "license_no":license_no, "ratings":ratings, "comment":comment})
+	db.commit()
 
-	# db.execute("INSERT INTO fl_cosmetology (first,last,license_no,ratings) VALUES (:first, :last, :license_no, :ratings)", { "first":first, "last":last, "license_no":license_no, "ratings":ratings})
-	# db.commit()
-
-	return render_template("success_course_complete.html", first=first, last=last, email=email, license_no=license_no, ratings=ratings, date_complete=date_complete)
+	return render_template("course_complete_pay.html", first=first, last=last, email=email, license_no=license_no, ratings=ratings, date_complete=date_complete)
 
 @app.route('/success_course_complete/',methods = ["GET", "POST"])
 def success_course_complete():
 	# return 'wtf'
+	email = session['email']
+	print ("email", email)
 
-
-	# db.execute("INSERT INTO fl_cosmetology (first,last,license_no,ratings) VALUES (:first, :last, :license_no, :ratings)", { "first":first, "last":last, "license_no":license_no, "ratings":ratings})
-	# db.commit()
-	return render_template("course_completion.html" )
+	paid = True
+	db.execute("UPDATE fl_cosmetology_2 SET paid = :paid WHERE email = :email", {"paid": paid, "email": email})
+	db.commit()
+	return render_template("success_course_complete.html" )
 
 @app.route("/results", methods = ["GET", "POST"])
 def results():
