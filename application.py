@@ -73,6 +73,14 @@ def index():
 def intro_cosmetologist():
 	return render_template("intro_cosmetologist.html")
 
+@app.route('/intro_barber/', methods = ["GET"])
+def intro_barber():
+	return render_template("intro_barber.html")
+
+@app.route('/cosmo_course/', methods = ["GET","POST"])
+def cosmo_course():
+	return render_template("cosmo_course.html")
+
 @app.route('/course_completetion/', methods = ["GET","POST"])
 def course_completetion():
 
@@ -101,7 +109,7 @@ def course_completetion():
 
 @app.route('/success_course_complete/',methods = ["GET", "POST"])
 def success_course_complete():
-	# return 'wtf'
+	# stripe payment need webhook still/ timedelta seems to work?
 	email = session['email']
 	print ("email", email)
 
@@ -212,18 +220,6 @@ def results():
 		return render_template("final_pass.html", final_score = final_score)
 	else:
 		return render_template("final_fail.html", final_score = final_score)
-
-'''
-@app.route('/course_completion/', methods = ["GET"])
-def course_completion():
-
-	return render_template("course_completion.html")
-'''
-@app.route('/cosmo_course/', methods = ["GET","POST"])
-def cosmo_course():
-
-	return render_template("cosmo_course.html")
-
 
 @app.route('/faq/', methods = ["GET", "POST"])
 def faq():
