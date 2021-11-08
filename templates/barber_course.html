@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Florida Continuing Education</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111789653-4');
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<style>
+  body {
+    height: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 100px;
+    padding: 0;
+    font-family: verdana;
+    background-color: white;
+  }
+
+  object {
+    margin-top: -20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+  }
+
+  .admin-text {
+    margin-top: -30px;
+    margin-bottom: 0px;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  nav ul li {
+    display: flex;
+    margin: 2%;
+    margin-bottom: 25px;
+    margin-top: 50px;
+    text-decoration: none;
+    font-size: 15px;
+  }
+
+  @media (min-width: 500px) {
+    nav ul li {
+      margin: 2%;
+      margin-bottom: 0px;
+      margin-top: 20px;
+      font-size: 20px;
+    }
+  }
+
+  nav ul li a {
+    color: black;
+    text-decoration: none;
+  }
+
+  #line {
+
+    margin-top: 20px;
+    margin-bottom: -20px;
+  }
+
+  h1 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  h5 {
+    /* margin-bottom: 30px; */
+  }
+
+  #top {}
+</style>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="{{ url_for('index') }}">Home</a></li>
+      <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+      <li><a href="{{ url_for('contact') }}">Contact</a></li>
+    </ul>
+  </nav>
+  <h1>FINAL EXAM</h1>
+  <h5>Check the answer to each true/false question, you must get 80% or higher to pay</h5>
+  <form action="{{ url_for('result_barber') }}" method="post"  enctype = "multipart/form-data">
+  <div class="text-left">
+  <button id ="su" class="btn btn-primary btn-lg ">Submit</button>
+    <P>1. HIV and AIDS are the same thing. <BR>
+      <input type="radio" name="1" value=""> True<BR>
+      <input type="radio" name="1" value="c"> False <BR>
+
+    </p>
+    <P>2. You can get HIV from blood.  <BR>
+      <input type="radio" name="2" value="c"> True<BR>
+      <input type="radio" name="2" value=""> False <BR>
+    </p>
+    <P>3. You can get HIV from animals.  <BR>
+      <input type="radio" name="3" value=""> True<BR>
+      <input type="radio" name="3" value="c"> False <BR>
+    </p>
+    <P>4. Using gloves, goggles, and other barriers when anticipating contact with blood
+      or body fluids prevents occupational HIV transmission.  <BR>
+      <input type="radio" name="4" value="c"> True<BR>
+      <input type="radio" name="4" value=""> False <BR>
+    </p>
+    <P>5. Occupational HIV transmission is extremely rare.<BR>
+      <input type="radio" name="5" value="c"> True<BR>
+      <input type="radio" name="5" value=""> False <BR>
+    </p>
+    <P>6. There is enough HIV virus in bodily fluids like saliva, sweat, or urine to transmit it from one person to another<BR>
+      <input type="radio" name="6" value=""> True<BR>
+      <input type="radio" name="6" value="c"> False <BR>
+    </p>
+    <P>7. One of the main ways to get HIV is sharing needles, syringes or other equipment used to prepare and inject.<BR>
+      <input type="radio" name="7" value="c"> True<BR>
+      <input type="radio" name="7" value=""> False <BR>
+    </p>
+    <P>8. You can get HIV from insects. When an insect (such as a mosquito) bites you it injects the blood of the last person it bit<BR>
+      <input type="radio" name="8" value=""> True<BR>
+      <input type="radio" name="8" value="c"> False <BR>
+    </p>
+    <P>9. Someone living with HIV who has an ‘undetectable’ viral load, meaning effective treatment has lowered the
+      amount of virus in their blood to levels where it cannot be detected by a normal blood test, cannot pass on HIV.<BR>
+      <input type="radio" name="9" value="c"> True<BR>
+      <input type="radio" name="9" value=""> False <BR>
+    </p>
+    <P>10. While all groups are affected by HIV, some are more vulnerable than others<BR>
+      <input type="radio" name="10" value="c"> True<BR>
+      <input type="radio" name="10" value=""> False <BR>
+    </p>
+
+  </div>
+
+
+
+  </form>
+  <div class="container-fluid  jumbotron">
+    <div class="text-center">
+      <h1>Table of Contents</h1>
+    </div>
+
+    <div class="text-left">
+
+      <h5>
+        <b>Chapter 1: HIV & AIDS (1-hour)</b>
+        <ul style="list-style-type:square">
+          <li>HIV/Aids Definition</li>
+          <li>Transmission</li>
+          <li>HIV/Aids Myths</li>
+          <li>Stages of HIV</li>
+          <li>Diagnosis</li>
+          <li>Treatment</li>
+          <li>Most at Risk</li>
+          <li>HIV and Barbershops</li>
+        </ul>
+      </h5>
+  </div>
+
+    <h1>Chapter 1: HIV & AIDS</h1>
+    <p>Human immunodeficiency virus infection and acquired immunodeficiency syndrome (HIV/AIDS) is a spectrum of conditions caused by infection with the human immunodeficiency virus.
+    <p>H – Human – The HIV virus attacks human beings through their bloodstream. No other animals are susceptible to HIV.</p>
+    <p>I – Immunodeficiency – HIV weakens your immune system by destroying important cells that fight disease and infection.</p>
+    <p>V – Virus – HIV is a virus that hijacks cells in the body in order to replicate itself. There is no cure for the HIV virus.</p>
+    <p>Following initial infection a person may not notice any symptoms, or may experience a brief period of influenza-like illness. Typically, this is followed by a prolonged period with no symptoms. If the infection progresses, it interferes more
+      with the immune system, increasing the risk of developing common infections such as tuberculosis, as well as other opportunistic infections, and tumors which are otherwise rare in people who have normal immune function. These late symptoms of
+      infection are referred to as acquired immunodeficiency syndrome (AIDS). This stage is often also associated with unintended weight loss.</p>
+    <h3>AIDS</h3>
+    <p>AIDS is the late stage of HIV infection that occurs when the body’s immune system is badly damaged because of the virus.
+      In the U.S., most people with HIV do not develop AIDS because taking HIV medicine every day as prescribed stops the progression of the disease.
+      A person with HIV is considered to have progressed to AIDS when:</p>
+    <p>
+      -The number of their CD4 cells falls below 200 cells per cubic millimeter of blood (200 cells/mm3). </p>
+    (In someone with a healthy immune system, CD4 counts are between 500 and 1,600 cells/mm3.) OR
+    <p>-They develop one or more opportunistic infections regardless of their CD4 count.</p>
+
+
+    <p>Without HIV medicine, people with AIDS typically survive about 3 years. Once someone has a dangerous opportunistic illness, life expectancy without treatment falls to about 1 year. HIV medicine can still help people at this stage
+      of HIV infection, and it can even be lifesaving. But people who start ART soon after they get HIV experience more benefits—that’s why HIV testing is so important.</p>
+
+    <p>A – Acquired – a person has to “catch” the HIV virus in order to develop AIDS. It doesn’t just spontaneously occur.</p>
+    <p>I – “Immuno” –AIDS is caused by the immune system being depleted of its cells by HIV.</p>
+    <p>D – Deficiency –Once enough white blood cells have been destroyed by HIV, the immune system becomes weak and is not capable of fighting off other bacteria and viruses easily.</p>
+    <p>S – Syndrome ‐ AIDS is characterized by a group of symptoms including rapid weight loss; extreme fatigue; recurring fever; susceptibility to illness; sores of the mouth, anus, or genitals; pneumonia; blotches under the skin; memory loss, etc.
+    </p>
+
+    <h3>Transmission</h3>
+    <p>
+      There are only a few ways you can get HIV. Here, we explain the ways you can get it and how to protect yourself from HIV infection.
+    <h5>How can you get HIV?</h5>
+
+    HIV is found in the following bodily fluids of someone living with the virus:</p>
+    <ul>
+      <li>blood</li>
+      <li>semen and pre-seminal fluid ('pre-cum')</li>
+      <li>rectal fluids/anal mucous</li>
+      <li>vaginal fluids</li>
+      <li>breastmilk</li>
+    </ul>
+
+
+    <p>For you to get HIV, these bodily fluids need to get into your blood through a mucous membrane (for example, the lining of the vagina, rectum, or the opening of the penis), via shared injecting equipment, or through broken skin (such as cuts or
+      sores in the mouth or tears around the anus). There is not enough HIV virus in other bodily fluids, like saliva, sweat or urine, to transmit it from one person to another. Someone living with HIV who has an ‘undetectable’ viral load, meaning
+      effective treatment has lowered the amount of virus in their blood to levels where it cannot be detected by a normal blood test, cannot pass on HIV.
+      A person living with HIV with a detectable viral load can pass the virus to others whether they have symptoms or not. HIV is most infectious in the first few weeks after infection. At this time many people are unaware of their status.
+      <b>The main ways you can get HIV are:
+      </b>
+    <ul>
+      <li>Sex without a condom. Having unprotected sex with someone who has HIV, particularly unprotected vaginal sex and anal sex.</li>
+      <li>Sharing injecting equipment. Sharing needles, syringes or other equipment used to prepare and inject drugs with someone who has HIV.</li>
+      <li>Passed from mother-to-baby during pregnancy, childbirth and breastfeeding. A mother infected with HIV can pass the virus to her baby via her blood during pregnancy and birth, and through her breast milk when breastfeeding.</li>
+      <li>Contaminated blood transfusions and organ/tissue transplants. Receiving blood transfusions, blood products, or organ/tissue transplants that are contaminated with HIV. This risk is extremely small because most countries test blood products
+        for HIV first.</li>
+      <li>If adequate safety practices are not in place, healthcare workers can also be at risk of HIV from cuts made by a needle or sharp object (needlestick injury) with infected blood on it. However, the risk of ‘occupational exposure’, is very
+        low in most countries. If you think you have been exposed to HIV, the only way to find out if you have HIV is to have an HIV test.</li>
+    </ul>
+
+    <b>Less common ways are:</b>
+
+    <ul>
+      <li>From mother to child during pregnancy, birth, or breastfeeding. However, the use of HIV medicines and other strategies have helped lower the risk of mother-to-child transmission of HIV to 1% or less in the United States.</li>
+      <li>Getting stuck with an HIV-contaminated needle or other sharp object This is a risk mainly for health care workers. The risk is very low.</li>
+    </ul>
+
+    <b>HIV is spread only in extremely rare cases by:</b>
+    <ul>
+      <li>Having oral sex But in general, the chance that an HIV-negative person will get HIV from oral sex with an HIV-positive partner is extremely low.</li>
+      <li>Receiving blood transfusions, blood products, or organ/tissue transplants that are contaminated with HIV The risk is extremely small these days because of rigorous testing of the U.S. blood supply and donated organs and tissues.</li>
+      <li>Being bitten by a person with HIV Each of the very small number of documented cases has involved severe trauma with extensive tissue damage and the presence of blood. There is no risk of transmission if the skin is not broken.</li>
+      <li>Contact between broken skin Wounds, or mucous membranes and HIV-infected blood or blood contaminated body fluids.</li>
+      <li>Deep, open-mouth kissing. If both partners have sores or bleeding gums and blood from the HIV-positive partner gets into the bloodstream of the HIV-negative
+        partner. HIV is not spread through saliva.</li>
+      <li>Eating food that has been pre-chewed by a person with HIV The contamination occurs when infected blood from a caregiver’s mouth mixes with food while
+        chewing. The only known cases are among infants.</li>
+    </ul>
+
+    <h3>How do I protect myself from HIV?</h3>
+    <p>
+      There are a number of ways you can protect yourself from HIV, including:
+    </p>
+    <ul>
+      <li>using a condom every time you have vaginal, anal or oral sex. In some countries PrEP is available. This is a course of HIV drugs which if taken consistently as advised by your healthcare professional prevents HIV infection through sex</li>
+      <li>avoiding sharing needles, syringes and other injecting equipment</li>
+      <li>taking HIV treatment if you are a new or expectant mother living with HIV, as this will dramatically reduce the risk of passing HIV to your baby during pregnancy, childbirth and breastfeeding</li>
+      <li>asking your healthcare professional if the blood product you are receiving (blood transfusion, organ or tissue transplant) has been tested for HIV</li>
+      <li>taking precautions if you are a healthcare worker, such as wearing protection (like gloves and goggles), washing hands after contact with blood and other bodily fluids, and safely disposing of sharp equipment</li>
+      <li>if you think you have been exposed to HIV you may be able to access PEP, a 4-week course of ARV drugs taken after possible HIV exposure to prevent HIV infection. You must start PEP within 72 hours of possible exposure to be effective</li>
+    </ul>
+
+
+
+    <h3>HIV Myths</h3>
+    <p>You cannot get HIV from:
+    </p>
+    <ul>
+      <li>Someone who has an undetectable viral load. If a healthcare professional has confirmed that someone
+        living with HIV has an undetectable viral load (meaning effective treatment has reduced the amount of
+        virus in their blood so that it cannot be detected through a blood test) there is no risk of transmission.
+        Undetectable = Untransmissable (U+U).
+      </li>
+      <li>Someone who doesn’t have HIV.
+        You can only get HIV from someone who is already living with HIV.
+      </li>
+      <li>Touching someone who has HIV.
+        HIV can only be transmitted through specific bodily fluids so you can’t get HIV from touching someone, hugging them or shaking their hand.</li>
+      <li>Kissing.
+        There is such a small amount of HIV in the saliva of a person living with HIV that the infection can’t be passed on from kissing
+      </li>
+      <li>Sweat, tears, urine or feces of someone who has HIV.
+        HIV can’t be transmitted through sweat, tears, urine or feces</li>
+      <li>Mutual masturbation.
+        Mutual masturbation, fingering and hand-jobs can’t give you HIV. However,
+        if you use sex toys make sure you use a new condom on them when switching between partners.</li>
+      <li>Used condoms.
+        Outside of the body, HIV in semen can only survive for a very short amount of time. So, even if a condom had sperm from an
+        HIV-positive person in it, it would not pose any risk.</li>
+      <li>Air.
+        HIV can’t survive in air so you can’t get it from sharing a space with someone who is HIV-positive</li>
+      <li>Coughs, sneezes or spit.
+        There is only a trace of HIV in these bodily fluids so they can’t transmit HIV</li>
+      <li>Food, drink and cooking utensils.
+        HIV can’t be passed on through sharing food, drinks or cooking utensils, even if the person preparing your food is living with HIV</li>
+      <li>Toilet seats, tables, door handles, cutlery, sharing towels.
+        You can’t get HIV from any of these as it can only be transmitted through specific bodily fluids</li>
+      <li>Water.
+        HIV can’t survive in water, so you can’t get HIV from swimming pools, baths, shower areas, washing clothes or from drinking water</li>
+      <li>Insects.
+        You can’t get HIV from insects. When an insect (such as a mosquito) bites you it sucks your blood only – it does not inject the blood of the last person it bit</li>
+      <li>Animals.
+        HIV stands for Human Immunodeficiency Virus, which means that the infection can only be passed between humans</li>
+      <li>New or sterilized needles.
+        New needles can’t infect someone because they haven’t been in contact with infected blood. If used needles are cleaned and sterilised they can’t transmit HIV either</li>
+      <li>Musical instruments.
+        HIV can’t survive on musical instruments. Even if it is an instrument that you play using your mouth, it can’t give you HIV</li>
+      <li>Tattoos and piercings.
+        There is only a risk if the needle used by the professional has been used in the body of someone living with HIV and not sterilised afterwards. However,
+        most practitioners are required by law to use new needles for each new client</li>
+    </ul>
+
+
+
+    <h5>HIV and AIDS are the same thing</h5>
+    <p>HIV and AIDS are commonly mistaken as interchangeable terms for the same disease. However, in truth, they are distinct terms that are not transposable. HIV is a virus that attacks a person’s immune system. If left untreated, it can evolve into
+      AIDS. AIDS is an immunodeficiency syndrome. It is the third and most advanced stage of infection caused by HIV. Most people who are living with HIV do not have AIDS and will never progress into the AIDS phase of the disease. HIV progresses into
+      AIDS when a person’s immune system is diminished to the point of not being able to combat certain kinds of infections and cancers. To determine the stage of infection caused by HIV, a lab test is conducted to identify the number of CDR cells a
+      person has, otherwise known as their “viral load.” A viral load under 200 in an HIV‐infected person indicates an AIDS diagnosis. Without medication, it can take between two to 10 years or longer for an HIV‐positive person to develop AIDS.
+    </p>
+
+    <h5>HIV diagnosis is a death sentence</h5>
+    <p>
+      Revolutions in medications and treatments make it possible for HIV carriers to live long, healthy lives. In the Western world, where resources are available for treatment, HIV has been downgraded from a fatal virus to a chronic life‐threatening
+      illness (similar to cancer, diabetes mellitus, and hypertension). The virus becomes life‐threatening once it progresses to the third and most severe stage of HIV: AIDS. However, in many case, individuals diagnosed with AIDS can be reverted to
+      HIV status after starting anti‐ HIV drug “cocktails,” regaining their health and returning to a normal life. There are many treatments that can now help people with HIV, each attacking the virus in their own way. As a result, many HIV positive
+      people are living much longer and healthier lives than ever before. Medicines today can slow the growth of the virus or stop it from making copies of itself. These treatment therapies cannot fully eradicate the virus from the bloodstream, but
+      are able to keep the amount of virus in the blood low or undetectable. Currently, there are many clinical and research trails that continue to bring insight into the virus and its treatments and the potential pathway to a cure. Today’s
+      treatment and prevention interventions were made through scientific advances funded through federal and private investments in basic, biomedical, behavioral, and social science research. All findings point to the fact that starting treatment
+      for HIV early (as soon as possible after diagnosis) significantly improves the patient’s health and reduces the risk of illness and death, decreasing the risk of onward transmission by 96%.
+    </p>
+
+    <h3>Three Main Stages of HIV</h3>
+
+    <h5>Acute Infection</h5>
+    <p>
+      The initial period following the contraction of HIV is called acute HIV, primary HIV or acute retroviral syndrome. Many individuals develop an influenza-like illness or a mononucleosis-like illness 2–4 weeks after exposure while others have no
+      significant symptoms. Symptoms occur in 40–90% of cases and most commonly include fever, large tender lymph nodes, throat inflammation, a rash, headache, tiredness, and/or sores of the mouth and genitals. The rash, which occurs in 20–50% of
+      cases, presents itself on the trunk and is maculopapular, classically. Some people also develop opportunistic infections at this stage. Gastrointestinal symptoms, such as vomiting or diarrhea may occur. Neurological symptoms of peripheral
+      neuropathy or Guillain–Barré syndrome also occurs. The duration of the symptoms varies, but is usually one or two weeks. Owing to their nonspecific character, these symptoms are not often recognized as signs of HIV infection. Even cases that do
+      get seen by a family doctor or a hospital are often misdiagnosed as one of the many common infectious diseases with overlapping symptoms. Thus, it is recommended that HIV be considered in people presenting with an unexplained fever who may have
+      risk factors for the infection.
+    </p>
+
+    <p>
+    <h5>Clinical Latency</h5>
+    The initial symptoms are followed by a stage called clinical latency, asymptomatic HIV, or chronic HIV. Without treatment, this second stage of the natural history of HIV infection can last from about three years[30] to over 20 years (on
+    average, about eight years). While typically there are few or no symptoms at first, near the end of this stage many people experience fever, weight loss, gastrointestinal problems and muscle pains. Between 50% and 70% of people also develop
+    persistent generalized lymphadenopathy, characterized by unexplained, non-painful enlargement of more than one group of lymph nodes (other than in the groin) for over three to six months. Although most HIV-1 infected individuals have a
+    detectable viral load and in the absence of treatment will eventually progress to AIDS, a small proportion (about 5%) retain high levels of CD4+ T cells (T helper cells) without antiretroviral therapy for more than five years.[28][33] These
+    individuals are classified as "HIV controllers" or long-term nonprogressors (LTNP). Another group consists of those who maintain a low or undetectable viral load without anti-retroviral treatment, known as "elite controllers" or "elite
+    suppressors". They represent approximately 1 in 300 infected persons.
+    </p>
+    <h5>Acquired Immunodeficiency Syndrome</h5>
+    <p>
+
+      Acquired immunodeficiency syndrome (AIDS) is defined as an HIV infection with either a CD4+ T cell count below 200 cells per µL or the occurrence of specific diseases associated with HIV infection. In the absence of specific treatment, around
+      half of people infected with HIV develop AIDS within ten years. The most common initial conditions that alert to the presence of AIDS are pneumocystis pneumonia (40%), cachexia in the form of HIV wasting syndrome (20%), and esophageal
+      candidiasis. Other common signs include recurrent respiratory tract infections. Opportunistic infections may be caused by bacteria, viruses, fungi, and parasites that are normally controlled by the immune system. Which infections occur depends
+      partly on what organisms are common in the person's environment. These infections may affect nearly every organ system. People with AIDS have an increased risk of developing various viral-induced cancers, including Kaposi's sarcoma, Burkitt's
+      lymphoma, primary central nervous system lymphoma, and cervical cancer. Kaposi's sarcoma is the most common cancer, occurring in 10% to 20% of people with HIV. The second-most common cancer is lymphoma, which is the cause of death of nearly 16%
+      of people with AIDS and is the initial sign of AIDS in 3% to 4%. Both these cancers are associated with human herpesvirus 8 (HHV-8).Cervical cancer occurs more frequently in those with AIDS because of its association with human papillomavirus
+      (HPV). Conjunctival cancer (of the layer that lines the inner part of eyelids and the white part of the eye) is also more common in those with HIV. Additionally, people with AIDS frequently have systemic symptoms such as prolonged fevers,
+      sweats (particularly at night), swollen lymph nodes, chills, weakness, and unintended weight loss. Diarrhea is another common symptom, present in about 90% of people with AIDS. They can also be affected by diverse psychiatric and neurological
+      symptoms independent of opportunistic infections and cancers.
+    </p>
+
+    <h3>Diagnosis</h3>
+    <p>HIV can be diagnosed through rapid diagnostic tests that provide same-day results. This greatly facilitates early diagnosis and linkage with treatment and care. People can also use HIV self-tests to test themselves. However, no single test can
+      provide a full HIV diagnosis; confirmatory testing is required, conducted by a qualified and trained health or community worker at a community centre or clinic. HIV infection can be detected with great accuracy using WHO prequalified tests
+      within a nationally approved testing strategy. Most widely-used HIV diagnostic tests detect antibodies produced by the person as part of their immune response to fight HIV. In most cases, people develop antibodies to HIV within 28 days of
+      infection. During this time, people experience the so-called “window” period – when HIV antibodies haven’t been produced in high enough levels to be detected by standard tests and when they may have had no signs of HIV infection, but also when
+      they may transmit HIV to others. After infection, an individual may transmit HIV transmission to a sexual or drug-sharing partner or for pregnant women to their infant during pregnancy or the breastfeeding period.
+      Following a positive diagnosis, people should be retested before they are enrolled in treatment and care to rule out any potential testing or reporting error. Notably, once a person diagnosed with HIV and has started treatment they should not
+      be retested. While testing for adolescents and adults has been made simple and efficient, this is not the case for babies born to HIV-positive mothers. For children less than 18 months of age, serological testing is not sufficient to identify
+      HIV infection – virological testing must be provided as early as birth or at 6 weeks of age. New technologies are now becoming available to perform this test at the point of care and enable same-day results, which will accelerate appropriate
+      linkage with treatment and care.
+    </p>
+
+    <h3>Treatment</h3>
+    <p>HIV disease can be managed by treatment regimens composed of a combination of three or more antiretroviral (ARV) drugs. Current antiretroviral therapy (ART) does not cure HIV infection but highly suppresses viral replication within a person's
+      body and allows an individual's immune system recovery to strengthen and regain the capacity to fight off opportunistic infections and some cancers.
+      Since 2016, WHO has recommended that all people living with HIV be provided with lifelong ART, including children, adolescents, adults and pregnant and breastfeeding women, regardless of clinical status or CD4 cell count. By June 2021, 187
+      countries had already adopted this recommendation, covering 99% of all people living with HIV globally. In addition to the treat all strategy, WHO recommends a rapid ART initiation to all people living with HIV, including offering ART on the
+      same day as diagnosis among those who are ready to start treatment. By June 2020, 82 low- and middle-income countries reported that they have adopted this policy, and approximately half of them reported country-wide implementation. Globally,
+      27.5 million [26.5–27.7 million] people living with HIV were receiving ART in 2020. This equates to a global ART coverage rate of 73% [56–88%]. However, more efforts are needed to scale up treatment, particularly for children and adolescents.
+      Only 54% [37–69%] of children (0–14 years old) were receiving ART at the end of 2020.
+    </p>
+
+
+    <h3>Who Is Most At Risk?</h3>
+
+    <p>Anyone can contract HIV, and while IDUs are at great risk because of practices related to their drug use, anyone who engages in unsafe sex (e.g., unprotected sex with an infected partner) could be exposed to HIV infection. However, while all
+      groups are affected by HIV, some are more vulnerable than others, as summarized below.
+    </p>
+    <ul>
+      <li>Men Who Have Sex with Men.
+        Gay or bisexual MSM are the most severely affected population. MSM account for just a small fraction (2 percent) of the total U.S. population, yet nearly two-thirds of all new infections occurred within this group in 2009, and one-half of all
+        people living with HIV in 2008 were MSM. MSM within ethnic minority populations are at greatest risk.
+      </li>
+      <li>Injection Drug Users.
+        Injection drug use has long been associated directly or indirectly with approximately one-third of AIDS cases in the United States. The fact that IDUs made up only 8 percent of new HIV infections in 2010 versus 23 percent in 1994–2000
+        demonstrates the progress made in HIV prevention and treatment within this population. Still, much work remains; while there may be fewer new infections among IDUs, in 2009, nearly one-half of those who were HIV+ were unaware they were
+        infected.
+      </li>
+      <li>Women.
+        Heterosexual contact with an HIV+ partner accounted for over one-quarter of all new infections in 2010 and is the main way that women contract the virus (see figure), especially within ethnic minority communities. Regional variations of HIV
+        incidence in women have changed over time. In the early years of the epidemic, incidence in women predominated in the Northeast, but infection rates and mortality have been steadily increasing in the southern United States.19 Although
+        injection drug use has declined as a means of HIV transmission over recent years, it is still responsible for 14 percent of HIV diagnoses in women. A recent study conducted by the Massachusetts Department of Public Health reported 40 percent
+        of White women contracted HIV through injection drug use.20 Another factor contributing to HIV disease in women is trauma. Trauma resulting from sexual or physical abuse experienced during childhood or adulthood is increasingly associated
+        with rising prevalence of HIV infection and poor health outcomes in HIV+ women.21 Comprehensive HIV treatment regimens that include mental health services are critical for this population.
+      </li>
+      <li>Ethnic Minorities.
+        HIV surveillance data show that the rates of new HIV infection are disproportionately highest within ethnic minority populations. African- Americans account for a higher proportion of HIV infections than any other population at all stages of
+        the disease from initial infection to death. Moreover, specific minority subgroups are at particular risk. Nearly two-thirds (64 percent) of new HIV infections among MSM occurred in minority men (Black/African-American, Hispanic/Latino,
+        Asian/Pacific Islanders, and Native American/ Hawaiian). In addition, young minority men (13–24 years old) had the greatest increase (53 percent) of HIV infections of all groups studied between the years 2006 and 2009, occurring predominantly
+        in the South. The Hispanic population accounted for 1 in 5 new HIV infections in the United States in 2009 — a rate 3 times that of the White community. A number of factors contribute to the high levels of HIV infection within this community,
+        including the country of birth. For example, there is a substantially larger proportion of HIV infections attributed to injection drug use for Hispanic men born in Puerto Rico than anywhere else. Such differences underscore the need for
+        interventions that are socially and culturally tailored for specific populations.
+      </li>
+      <li>Youth.
+        Young people are also at risk for HIV infection. Approximately 9,800 people aged 13–24 were diagnosed with HIV in 2010, representing 20 percent of newly diagnosed cases, with the highest rate occurring among those aged 20–24. Particular HIV
+        risk behaviors within this age group include sexual experimentation and drug abuse, which are often influenced by strong peer group relationships. Compounding this vulnerability is “generational forgetting”: Studies show that today’s youth
+        may be less likely to perceive the dangers associated with HIV than are older Americans, who witnessed a higher AIDS mortality rate associated with the rapid progression from HIV to AIDS in the early years of the epidemic.
+      </li>
+      <li>Older People.
+        Sixteen (16) percent of new diagnoses of HIV infection in the United States in 2010 occurred among individuals over the age of 50, and this number has been increasing for the past 11 years.26 Some older persons do not believe they are at risk
+        and thus engage in unsafe sexual practices. The problem is further exacerbated by healthcare professionals who underestimate the vulnerability of this population. The growing number of people contracting HIV later in life, combined with the
+        prolonged survival made possible by HAART, has contributed to an increasing number of people over the age of 50 living with HIV. This trend will continue, and by 2015, the over-50 population is predicted to represent one-half of all HIV/AIDS
+        cases.27 The aging population presents a variety of treatment challenges. Older adults progress more rapidly to AIDS, have a greater number of age-related comorbidities (e.g., cardiovascular disease, limited mobility), and report smaller
+        support networks than their younger counterparts.
+      </li>
+      <li>Criminal Justice System.
+        The criminal justice system is burdened with a significant population of HIV-infected individuals that can be 2 to 5 times larger than that in the surrounding community.29 An estimated 1 in 7 HIV+ individuals living in the United States
+        passes through this system each year.30 The criminal justice system is also burdened with significant substance abuse, with about one-half of Federal and State prisoners meeting the criteria for drug dependence or abuse.31 Yet, few offenders
+        are screened for HIV,32 or receive treatment for substance abuse and other mental illness while incarcerated. This situation is further exacerbated upon reentry when released offenders often lack health insurance and fail to be linked to
+        continuing treatment programs within the community. NIDA is helping to address these challenges by researching the best ways to identify and help prisoners get treatment for both drug addiction and HIV while incarcerated and in the community
+        after release.
+      </li>
+      <li>The Differential HIV Experience of African-Americans.
+        While African-Americans make up 12 percent of the U.S. population, they accounted for 46 percent of new HIV infections in 2010, substantially higher than the rate for Whites or Hispanics. The majority of these were men (70 percent); however,
+        African-American women also have a high rate of HIV diagnosis — nearly 20 times that of White women (see figure). More disheartening is that 1 in 16 African-American men and 1 in 32 African-American women will eventually be diagnosed with
+        HIV. The causes of this HIV health disparity are complex. HIV infection prevalence is higher and more broadly represented in the African- American community compared to the White population; thus African-Americans are at increased risk of
+        infection simply by choosing intimate partners within their own ethnic communities. Additionally, African-American communities experience high rates of other sexually transmitted infections, and some of these infections can significantly
+        increase the risk of contracting HIV. African-Americans also tend to be diagnosed at later stages in the disease and therefore begin therapy later, increasing the length of time of their infectivity. Once engaged in HAART, African-Americans
+        are more likely to discontinue therapy prematurely, risking resurgence of HIV infectivity and further health complications. To address these disparities, NIDA is encouraging research that expands and coordinates prevention and treatment
+        strategies across Federal agencies and within communities to more effectively identify persons at risk and link them to the help they need. Additional efforts are being made to promote healthy lifestyle choices, safe sexual practices, and HIV
+        and substance abuse treatment adherence in a way that is culturally relevant for the African-American community.
+      </li>
+    </ul>
+
+    <h3>HIV and Salons</h3>
+    <p>Occupational HIV transmission is extremely rare. Only 58 cases of confirmed occupational HIV transmission to health care personnel have been reported in the United States. An additional 150 possible transmissions have also been reported to
+      CDC.
+    </p>
+
+    <h3>How can I prevent occupational HIV transmission?</h3>
+
+    <p>Follow Standard Precautions at all times. Assume that blood and other body fluids are potentially infectious.</p>
+    <ul>
+      <li>Use gloves, goggles, and other barriers when anticipating contact with blood or body fluids.</li>
+      <li>Wash hands and other skin surfaces immediately after contact with blood or body fluids.</li>
+      <li>Be careful when handling and disposing of sharp instruments during and after use.</li>
+      <li>Use safety devices to prevent needle-stick injuries.</li>
+      <li>Dispose of used syringes or other sharp instruments in a sharps container.</li>
+    </ul>
+
+    <h3>What if an HIV exposure happens at work?</h3>
+    <p>If you are exposed to HIV at work, report your exposure to the appropriate person, and see a doctor or visit an emergency room right away. Post-exposure prophylaxis (PEP) can reduce your chance of getting HIV infection. It must be started
+      within 72 hours (3 days) after you may have been exposed to HIV. But the sooner you start PEP, the better. Every hour counts! Clinicians caring for personnel who’ve had a possible exposure can call the PEPline (1-888-448-4911) for advice on
+      managing the exposure.</p>
+    <br>
+
+
+  </div>
+</body>
+
+</html>

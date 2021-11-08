@@ -57,11 +57,12 @@ db = scoped_session(sessionmaker(bind=engine)) # for individual sessionss
 # utils.recent_certificates_csv()
 
 '''
-db.execute("CREATE TABLE fl_cosmetology_2(id SERIAL PRIMARY KEY, first VARCHAR NOT NULL, last VARCHAR NOT NULL, email VARCHAR NOT NULL, license_no VARCHAR NOT NULL, ratings VARCHAR NOT NULL, comment VARCHAR NOT NULL, paid BOOLEAN)")
+db.execute("CREATE TABLE fl_cosmetology_2(id SERIAL PRIMARY KEY, first VARCHAR NOT NULL, last VARCHAR NOT NULL, email VARCHAR NOT NULL, license_no VARCHAR NOT NULL,
+ratings VARCHAR NOT NULL, comment VARCHAR NOT NULL, paid BOOLEAN)")
 db.commit()
 '''
-user =  db.execute("SELECT *  FROM fl_cosmetology_2 ").fetchall()
-print ("users",user)
+# user =  db.execute("SELECT *  FROM fl_cosmetology_2 ").fetchall()
+# print ("users",user)
 # print (engine.table_names())
 
 
@@ -80,6 +81,10 @@ def intro_barber():
 @app.route('/cosmo_course/', methods = ["GET","POST"])
 def cosmo_course():
 	return render_template("cosmo_course.html")
+
+@app.route('/barber_course/', methods = ["GET","POST"])
+def barber_course():
+	return render_template("barber_course.html")
 
 @app.route('/course_completetion/', methods = ["GET","POST"])
 def course_completetion():
@@ -118,8 +123,53 @@ def success_course_complete():
 	db.commit()
 	return render_template("success_course_complete.html" )
 
-@app.route("/results", methods = ["GET", "POST"])
-def results():
+@app.route("/result_barber", methods = ["GET", "POST"])
+def result_barber():
+	answers_correct = 0
+	result_1 = request.form.get("1", "")
+	result_2 = request.form.get("2", "")
+	result_3 = request.form.get("3", "")
+	result_4 = request.form.get("4", "")
+	result_5 = request.form.get("5", "")
+	result_6 = request.form.get("6", "")
+	result_7 = request.form.get("7", "")
+	result_8 = request.form.get("8", "")
+	result_9 = request.form.get("9", "")
+	result_10 = request.form.get("10", "")
+
+
+	if result_1 == "c":
+		answers_correct +=1
+	if result_2 == "c":
+		answers_correct +=1
+	if result_3 == "c":
+		answers_correct +=1
+	if result_4 == "c":
+		answers_correct +=1
+	if result_5 == "c":
+		answers_correct +=1
+	if result_6 == "c":
+		answers_correct +=1
+	if result_7 == "c":
+		answers_correct +=1
+	if result_8 == "c":
+		answers_correct +=1
+	if result_9 == "c":
+		answers_correct +=1
+	if result_10 == "c":
+		answers_correct +=1
+
+	final_score = (answers_correct/10) * 100
+	print ('answers correct', answers_correct)
+	print ('final score', final_score)
+
+	if final_score <= 80:
+		return render_template("final_pass.html", final_score = final_score)
+	else:
+		return render_template("final_fail.html", final_score = final_score)
+
+@app.route("/result_cosmo", methods = ["GET", "POST"])
+def result_cosmo():
 	answers_correct = 0
 	result_1 = request.form.get("1", "")
 	result_2 = request.form.get("2", "")
