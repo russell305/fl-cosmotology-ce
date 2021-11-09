@@ -61,8 +61,8 @@ db.execute("CREATE TABLE fl_cosmetology_2(id SERIAL PRIMARY KEY, first VARCHAR N
 ratings VARCHAR NOT NULL, comment VARCHAR NOT NULL, paid BOOLEAN)")
 db.commit()
 '''
-# user =  db.execute("SELECT *  FROM fl_cosmetology_2 ").fetchall()
-# print ("users",user)
+user =  db.execute("SELECT *  FROM fl_cosmetology_2 ").fetchall()
+print ("users",user)
 # print (engine.table_names())
 
 
@@ -86,8 +86,31 @@ def cosmo_course():
 def barber_course():
 	return render_template("barber_course.html")
 
-@app.route('/course_completetion/', methods = ["GET","POST"])
-def course_completetion():
+@app.route('/course_completion_barber/', methods = ["GET","POST"])
+def course_completion_barber():
+
+	first = request.form.get("first", "")
+	last = request.form.get("last", "")
+	email = request.form.get("email", "")
+	license_no = request.form.get("license", "")
+	date_complete = datetime.datetime.now()
+	print(date_complete.strftime("%x"))
+	print (first, last, email, license_no)
+	ratings = "ratings"
+	comment = "go fuck yourslf"
+	# lowercase n smush
+
+	session['email'] = email
+	session.permanent = True
+	app.permanent_session_lifetime = timedelta(minutes=60)
+	db.execute("INSERT INTO fl_cosmetology_2 (first,last,email,license_no,ratings,comment) VALUES (:first, :last, :email, :license_no, :ratings, :comment)", { "first":first, "last":last, "email":email, "license_no":license_no, "ratings":ratings, "comment":comment})
+	db.commit()
+
+	return render_template("course_complete_pay_barber.html", first=first, last=last, email=email, license_no=license_no, date_complete=date_complete)
+
+
+@app.route('/course_completion/', methods = ["GET","POST"])
+def course_completion():
 
 	first = request.form.get("first", "")
 	last = request.form.get("last", "")
@@ -164,9 +187,9 @@ def result_barber():
 	print ('final score', final_score)
 
 	if final_score <= 80:
-		return render_template("final_pass.html", final_score = final_score)
+		return render_template("final_pass_barber.html", final_score = final_score)
 	else:
-		return render_template("final_fail.html", final_score = final_score)
+		return render_template("final_fail_barber.html", final_score = final_score)
 
 @app.route("/result_cosmo", methods = ["GET", "POST"])
 def result_cosmo():

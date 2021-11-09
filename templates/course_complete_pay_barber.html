@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Florida Continuing Education: FAQ </title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111789653-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111789653-4');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<style>
+  body {
+    height: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 100px;
+    padding: 0;
+    font-family: verdana;
+    background-color: white;
+  }
+
+  nav ul {
+    margin-right: 3%;
+  }
+
+  nav ul li {
+    font-size: 24px;
+  }
+
+  @media (min-width: 500px) {
+    h1 {
+      margin-top: -45px;
+      margin-bottom: 10px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    h1 {
+      margin-top: -15px;
+      margin-bottom: 10px;
+    }
+  }
+
+  p {
+    font-size: 18px;
+  }
+</style>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
+    <div class="container">
+      <a class="navbar-brand" href="{{ url_for('index') }}">
+        <img id="logo" src="{{ url_for("static", filename="logo2.png") }}" alt="adjuster" class="nav-link" href="{{ url_for('index') }}">
+      </a>
+
+
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item ">
+          <a class="nav-link" href="{{ url_for('index') }}">Home </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="{{ url_for('sign_in_main') }}">Sign-In</a>
+
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="{{ url_for('sign_up_field') }}">Sign-Up</a>
+
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ url_for('faq') }}">FAQ</a>
+        </li>
+
+        <li class="nav-item ">
+          <a class="nav-link" href="{{ url_for('testimonials') }}">Testimonials</a>
+        </li>
+
+        <li class="nav-item ">
+          <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+  <div class="container-fluid jumbotron">
+    <div class="text-center ">
+<h4>Course Completion Certificate</h4>
+    <h5>Provider Name: USA Discount Continuing Education</h5>
+    <h5>Provider Approval Number: ***</h5>
+    <h5>Course Title: Florida 2-Hour HIV/AIDS Continuing Education for Cosmetology</h5>
+    <h5>Course Approval Number: *****</h5>
+    <h5>Approved Continuing Education Credit Hours: 2</h5>
+    <h5>Instructor’s Signature:
+      <i>Russell Mckee</i>
+    </h5>
+    <h5>Licensee Name: {{first}},{{last}} </h5>
+      <h5>License number: {{license_no}}</h5>
+      <h5>License number: {{email}}</h5>
+      <h5>Course Completion Date: {{date_complete}}</h5>
+
+
+The person named on this certificate has successfully completed the
+Cosmetology continuing education course taught in compliance with the
+rules of the Florida Department of Business and Professional Regulation
+Board of Cosmetology.
+
+<div class="container-fluid jumbotron">
+  <form action="{{ url_for('success_course_complete') }}" method="post"  >
+    <h5>Please Pay $5 to have Certificate of Completion sent to Department of Business & Regulation (DBPR)</h5>
+    <button id="su" class="btn-primary btn-lg">Submit</button>
+  </form>
+  <!-- Load Stripe.js on your website. -->
+<script src="https://js.stripe.com/v3"></script>
+
+<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+<button
+style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em;cursor:pointer"
+id="checkout-button-price_1JmeZOHlovjCGU8RZyKD3Slq"
+role="link"
+type="button"
+>
+Checkout
+</button>
+
+<div id="error-message"></div>
+
+<script>
+(function() {
+var stripe = Stripe('pk_live_Kte8bWOl8ZorTayjf5ZVNpQa00wTNHHZVq');
+
+var checkoutButton = document.getElementById('checkout-button-price_1JmeZOHlovjCGU8RZyKD3Slq');
+checkoutButton.addEventListener('click', function () {
+
+  stripe.redirectToCheckout({
+    lineItems: [{price: 'price_1JmeZOHlovjCGU8RZyKD3Slq', quantity: 1}],
+    mode: 'payment',
+    successUrl: window.location.protocol + '//www.floridadiscountce.org/success_course_complete',
+    cancelUrl: window.location.protocol + '//www.floridadiscountce.org/canceled',
+  })
+  .then(function (result) {
+    if (result.error) {
+      var displayError = document.getElementById('error-message');
+      displayError.textContent = result.error.message;
+    }
+  });
+});
+})();
+</script>
+
+
+
+</div>
+
+
+
+  </div>
+</body>
+
+</html>

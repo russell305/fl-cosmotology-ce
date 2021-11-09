@@ -102,10 +102,10 @@ p{
 
 
     <h5>Provider Name: USA Discount Continuing Education</h5>
-<h5>Provider Approval Number: 0008833</h5>
-<h5>Course Title: Florida 10-Hour Continuing Education for Cosmetology</h5>
+<h5>Provider Approval Number: ***</h5>
+<h5>Course Title: Florida 2-Hour HIV/AIDS Continuing Education for Barber</h5>
 <h5>Course Approval Number: *****</h5>
-<h5>Approved Continuing Education Credit Hours: 10</h5>
+<h5>Approved Continuing Education Credit Hours: 2</h5>
 <h5>Instructor’s Signature:
   <i>Russell Mckee</i>
 </h5>
@@ -113,7 +113,7 @@ p{
     <h4>Fill Out Course Completion Certificate</h4>
 
 
-    <form action="{{ url_for('course_completion') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ url_for('course_completion_barber') }}" method="post" enctype="multipart/form-data">
 
       <div class="input-fields">
         <label for="first">First Name</label>
@@ -134,38 +134,9 @@ p{
         <label for="license">License Number</label>
         <input id="license" type="text" name="license" placeholder="License Number" maxlength="40" required>
       </div>
+      <h5>Get Certificate of Completion</h5>
+          <button id="su" class="btn-primary btn-lg">Submit</button>
 
-<h4>Course Evaluation</h4>
-      <div class="input-fields">
-        <label for="course">Was the course material was presented in a clear, concise, well-organized
-        manner? 1-10</label>
-        <input id="course" type="text" name="course" size="2" maxlength="2" required>
-      </div>
-
-      <div class="input-fields">
-        <label for="rate">How would rate this course? 1-10</label>
-        <input id="rate" type="text" name="rate" size="2" maxlength="2" required>
-      </div>
-
-      <div class="input-fields">
-        <label for="expectation">Did the content of this course meet your expectations? 1-10</label>
-        <input id="expectation" type="text" name="expectation" size="2" maxlength="2" required>
-      </div>
-
-      <div class="input-fields">
-        <label for="objective">Did the material presented to you meet the course objectives? 1-10</label>
-        <input id="objective" type="text" name="objective" size="2" maxlength="2" required>
-      </div>
-
-    <h5>Comments/Recommendations:</h5>
-      <div class="input-fields">
-        <label id="comment" type="text" for="comment"></label>
-        <textarea name="comment" type="text" rows="2" cols="36" maxlength="100">
-
-        </textarea>
-        <h5>Get Certificate of Completion</h5>
-            <button id="su" class="btn-primary btn-lg">Submit</button>
-      </div>
     </form>
 
 
