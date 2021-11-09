@@ -61,8 +61,8 @@ db.execute("CREATE TABLE fl_cosmetology_2(id SERIAL PRIMARY KEY, first VARCHAR N
 ratings VARCHAR NOT NULL, comment VARCHAR NOT NULL, paid BOOLEAN)")
 db.commit()
 '''
-user =  db.execute("SELECT *  FROM fl_cosmetology_2 ").fetchall()
-print ("users",user)
+# user =  db.execute("SELECT *  FROM fl_cosmetology_2 ").fetchall()
+# print ("users",user)
 # print (engine.table_names())
 
 
@@ -70,11 +70,15 @@ print ("users",user)
 def index():
 	return render_template("main_page.html")
 
-@app.route('/intro_cosmetologist/', methods = ["GET"])
+@app.route('/cosmo_barber/', methods = ["GET","POST"])
+def cosmo_barber():
+	return render_template("cosmo_barber.html")
+
+@app.route('/intro_cosmetologist/', methods = ["GET","POST"])
 def intro_cosmetologist():
 	return render_template("intro_cosmetologist.html")
 
-@app.route('/intro_barber/', methods = ["GET"])
+@app.route('/intro_barber/', methods = ["GET","POST"])
 def intro_barber():
 	return render_template("intro_barber.html")
 
@@ -97,9 +101,7 @@ def course_completion_barber():
 	print(date_complete.strftime("%x"))
 	print (first, last, email, license_no)
 	ratings = "ratings"
-	comment = "go fuck yourslf"
-	# lowercase n smush
-
+	comment = "coment"
 	session['email'] = email
 	session.permanent = True
 	app.permanent_session_lifetime = timedelta(minutes=60)

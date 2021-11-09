@@ -121,9 +121,7 @@ h3{
     <div class="text-center">
       <h1>Florida Discount Cosmetology Education</h1>
       <h4 id="tag">Online continung education courses</h4>
-      <i>
-        <!-- <h5>24-hour 3-course bundle only $25!</h5> -->
-      </i>
+
       <strong>
         <h3>Click on your field to Sign-Up:</h3>
       </strong>
@@ -132,6 +130,16 @@ h3{
         <div class="row">
           <div class="col-md-6">
             <ul id="">
+              <div class="button1">
+              	<form action="{{ url_for('cosmo_barber') }}" method="post">
+              				<button class=" btn-success btn-lg " aria-pressed="true">Cosmetologist/Barber</button><BR>
+              	</form>
+              </div>
+              <div class="button1">
+                <form action="{{ url_for('intro_barber') }}" method="post">
+                      <button class=" btn-success btn-lg " aria-pressed="true">2-Hour HIV/AIDS Course For Barber License Renewal</button><BR>
+                </form>
+              </div>
               <h4>
                   <li id="list"><a href="{{ url_for('intro_cosmetologist') }}">Florida Cosmetologist</a></li>
               </h4>
@@ -139,35 +147,21 @@ h3{
                 <li id="list"><a href="{{ url_for('intro_barber') }}">Florida Barber</a></li>
               </h4>
 
-              <h4>
-                  <li id="list"><a href="{{ url_for('index') }}">Facial Specialist</a></li>
-              </h4>
-              <h4>
-                <li id="list"><a href="{{ url_for('index') }}">Full Specialist</a></li>
-              </h4>
+
+
             </ul>
           </div>
           <div class="col-md-6">
             <ul id="">
               <h4>
-                <li id="list"><a href="{{ url_for('index') }}">Life, Health, & Annuity Agent (2-15/2-18)</a></li>
+                <li id="list"><a href="{{ url_for('index') }}">XXXXXXXXXXXXXXXXXXXXXX</a></li>
               </h4>
-              <h4>
-                  <li id="list"><a href="{{ url_for('index') }}">Life & Annuity Agent (2-14/2-16)</a></li>
-                </h4>
-              <h4>
-                <li id="list"><a href="{{ url_for('index') }}">Health Agent (2-40)</a></li>
-              </h4>
-              <h4>
-                <li id="list"><a href="{{ url_for('index') }}">Real Estate Agent (coming soon)</a></li>
-              </h4>
+
             </ul>
           </div>
 
         </div>
       </div>
-
-
 
     <h5><b>
         <p>Provider of Record: Florida Discount Continuing Education <br> <p>Provider Number: 372120</p> </p>
